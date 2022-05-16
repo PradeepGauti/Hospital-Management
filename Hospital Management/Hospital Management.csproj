@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+    <RootNamespace>Hospital_Management</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Common\**" />
+    <Compile Remove="DataRepository\**" />
+    <Compile Remove="Doctor Functions\**" />
+    <Compile Remove="DoctorModels\**" />
+    <Compile Remove="Patient Functions\**" />
+    <Compile Remove="PatientModels\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <EmbeddedResource Remove="DataRepository\**" />
+    <EmbeddedResource Remove="Doctor Functions\**" />
+    <EmbeddedResource Remove="DoctorModels\**" />
+    <EmbeddedResource Remove="Patient Functions\**" />
+    <EmbeddedResource Remove="PatientModels\**" />
+    <None Remove="Common\**" />
+    <None Remove="DataRepository\**" />
+    <None Remove="Doctor Functions\**" />
+    <None Remove="DoctorModels\**" />
+    <None Remove="Patient Functions\**" />
+    <None Remove="PatientModels\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Function1.cs" />
+    <Compile Remove="Models\Patient\PatientBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.26.1" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.13" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HospitalManagementFunctions\Appointments\" />
+    <Folder Include="Models\Appoinments\" />
+  </ItemGroup>
+</Project>
